@@ -6,7 +6,8 @@
     "dev": "ts-node src/main.ts",
     "start:dev": "nodemon -e ts --exec ts-node src/main.ts",
     "start:dev:js": "nodemon -e ts --exec \"tsc && node ./dist/main.js\"",
-    "build": "tsc"
+    "build": "tsc",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
