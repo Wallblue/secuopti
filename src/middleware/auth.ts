@@ -25,18 +25,18 @@ export const authMiddleware = async (req: Request, res: Response, next: NextFunc
             return
         }
 
-        verify(token, "valuerandom", (err, user) => {
+        verify(token, "valuerandom", (err) => {
             if (err) {
                 res.status(403).send({ "message": "Access Forbidden" })
                 return
             }
             // https://www.geeksforgeeks.org/express-js-res-locals-property/
-            (req as any).user = user;
+            //(req as any).user = user;
             next();
         })
 
 
-    } catch (error) {
-
+    } catch {
+        console.log("toto")
     }
 }

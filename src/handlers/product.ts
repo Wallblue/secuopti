@@ -57,7 +57,6 @@ export const createProductHandler = async (req: Request, res: Response) => {
 
 export const listProductHandler = async (req: Request, res: Response) => {
     try {
-        console.log((req as any).user)
         const validation = ListProductsValidation.validate(req.query);
         if (validation.error) {
             res.status(400).send(generateValidationErrorMessage(validation.error.details))
